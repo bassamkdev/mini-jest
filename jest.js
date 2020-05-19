@@ -1,15 +1,32 @@
-const { multiply, divison } = require('./math.js');
+const { multiply, division } = require('./math.js');
 
-let result = multiply(4,5);
-let expected = 20 
+test('multiply works', () => {
+    const result = multiply(3,5);
+    const expected = 15;
+    expect(result).toBe(expected)
+})
 
-expect(result).toBe(expected);
+test('division works', () => {
+    const result = division(10,2);
+    const expected = 5;
+    expect(result).toBe(expected)
+})
+
+function test (title, callback) {
+    try {
+        callback();
+        console.log(`✅ ${title}`);
+    } catch (error) {
+        console.error(`❌ ${title}`);
+        console.error(error);
+    }
+}
 
 function expect (output) {
     return {
         toBe (expected) {
             if (output !== expected) {
-                throw new Error(`${result} is not equal to ${expected}`)
+                throw new Error(`${output} is not equal to ${expected}`)
             }
         }
     }

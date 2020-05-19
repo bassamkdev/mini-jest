@@ -5,7 +5,7 @@ A good simulation of how jest testing framework works under the hood
 This framework is consisted of two [functions](https://github.com/bassamkdev/mini-jest/blob/master/globals-setup.js):
 1. ### **_expect_** function:
     Gets the actual result of calling the function that is supposed to be tested as input, and returns an object that has a set of methods like _toBe_, _toEqual_, ... which throw Error if the condition is not met
-2. ### ***_test_** function:
+2. ### **_test_** function:
     Gets a title for test and a callback function as arguments and its output is the result of the test
 
 ## How to write a test ?

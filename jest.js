@@ -1,4 +1,17 @@
-const { multiply, division } = require('./math.js');
+const { multiply, division, divisionAsync, multiplyAsync } = require('./math.js');
+
+test('multiply works asyncronously', async () => {
+    const result = await multiply(3,5);
+    const expected = 15;
+    expect(result).toBe(expected)
+})
+
+test('division works asyncronously', async () => {
+    const result = await division(10,2);
+    const expected = 5;
+    expect(result).toBe(expected)
+})
+
 
 test('multiply works', () => {
     const result = multiply(3,5);
@@ -12,9 +25,9 @@ test('division works', () => {
     expect(result).toBe(expected)
 })
 
-function test (title, callback) {
+async function test (title, callback) {
     try {
-        callback();
+        await callback();
         console.log(`✅ ${title}`);
     } catch (error) {
         console.error(`❌ ${title}`);
